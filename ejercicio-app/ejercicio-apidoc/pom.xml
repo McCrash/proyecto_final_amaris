@@ -18,6 +18,10 @@
         <greyhawk.spring-boot-plugin.skip>true</greyhawk.spring-boot-plugin.skip>
         <greyhawk.package.root>org.greyhawk.ejercicio</greyhawk.package.root>
 
+        <greyhawk.project-setup.group>org.greyhawk.examples</greyhawk.project-setup.group>
+        <greyhawk.project-setup.artifact>greyhawk-examples-setup-lenient</greyhawk.project-setup.artifact>
+        <greyhawk.project-setup.version>1.0-SNAPSHOT</greyhawk.project-setup.version>
+
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>

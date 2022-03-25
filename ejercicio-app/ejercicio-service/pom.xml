@@ -17,6 +17,10 @@
     <properties>
         <greyhawk.package.root>org.greyhawk.ejercicio</greyhawk.package.root>
 
+        <greyhawk.project-setup.group>org.greyhawk.examples</greyhawk.project-setup.group>
+        <greyhawk.project-setup.artifact>greyhawk-examples-setup-lenient</greyhawk.project-setup.artifact>
+        <greyhawk.project-setup.version>1.0-SNAPSHOT</greyhawk.project-setup.version>
+
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
@@ -24,14 +28,15 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.grehawk.ejercicio</groupId>
-            <artifactId>ejercicio-apidoc</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.greyhawk.core</groupId>
+            <artifactId>greyhawk-rest-server-starter</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.greyhawk.core</groupId>
-            <artifactId>greyhawk-rest-server-starter</artifactId>
+            <groupId>org.greyhawk.ejercicio</groupId>
+            <artifactId>ejercicio-apidoc</artifactId>
+            <version>0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
