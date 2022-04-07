@@ -36,4 +36,5 @@
 # Others
 true
 .DS_Store
+/db
 

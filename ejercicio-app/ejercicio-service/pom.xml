@@ -6,6 +6,18 @@
 
     <groupId>org.greyhawk.ejercicio</groupId>
     <artifactId>ejercicio-service</artifactId>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>15</source>
+                    <target>15</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <parent>
         <groupId>org.greyhawk.core</groupId>
@@ -17,8 +29,8 @@
     <properties>
         <greyhawk.package.root>org.greyhawk.ejercicio</greyhawk.package.root>
 
-        <greyhawk.project-setup.group>org.greyhawk.examples</greyhawk.project-setup.group>
-        <greyhawk.project-setup.artifact>greyhawk-examples-setup-lenient</greyhawk.project-setup.artifact>
+        <greyhawk.project-setup.group>org.greyhawk.ejercicio</greyhawk.project-setup.group>
+        <greyhawk.project-setup.artifact>greyhawk-ejercicio-setup</greyhawk.project-setup.artifact>
         <greyhawk.project-setup.version>1.0-SNAPSHOT</greyhawk.project-setup.version>
 
         <maven.compiler.source>17</maven.compiler.source>
@@ -37,6 +49,17 @@
             <artifactId>ejercicio-apidoc</artifactId>
             <version>0.1-SNAPSHOT</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
     </dependencies>

@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.greyhawk.conventions.restapi.inbounds.rest.dtos.formats.LocalDateTimeDtoFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
@@ -22,7 +23,8 @@ public class PriceRequestDto {
 
   @NotNull
   @Schema(example = LocalDateTimeDtoFormat.EXAMPLE)
-  private LocalDateTime startDate;
+  @DateTimeFormat(pattern = LocalDateTimeDtoFormat.PATTERN)
+  private LocalDateTime applyDate;
 
   @NotNull
   private Long productId;
