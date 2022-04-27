@@ -2,7 +2,6 @@ package org.greyhawk.ejercicio.domain.services;
 
 import lombok.RequiredArgsConstructor;
 import org.greyhawk.ejercicio.domain.vos.Price;
-import org.greyhawk.ejercicio.domain_connectors.services.PricesService;
 import org.greyhawk.ejercicio.outbound_connectors.dao.PricesDao;
 import org.springframework.stereotype.Service;
 
