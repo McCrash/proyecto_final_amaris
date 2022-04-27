@@ -8,15 +8,15 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class PricesApiDocConfigurationTest {
 
-  private PricesApiDocConfiguration pricesApiDocConfiguration = new PricesApiDocConfiguration();
+  private EjercicioApiDocConfiguration ejercicioApiDocConfiguration = new EjercicioApiDocConfiguration();
 
   @Test
   void should_return_api_info_instance() {
-    assertInstanceOf(ApiInfo.class, pricesApiDocConfiguration.apiInfo());
+    assertInstanceOf(ApiInfo.class, ejercicioApiDocConfiguration.apiInfo());
   }
 
   @Test
   void should_return_api_info_not_null() {
-    assertNotNull(pricesApiDocConfiguration.apiInfo());
+    assertNotNull(ejercicioApiDocConfiguration.apiInfo());
   }
 }
