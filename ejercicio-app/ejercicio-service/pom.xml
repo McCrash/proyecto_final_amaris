@@ -62,6 +62,18 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.greyhawk.rest.server</groupId>
+            <artifactId>greyhawk-rest-server-testutils</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.greyhawk.rest.server.conventions</groupId>
+            <artifactId>greyhawk-rest-server-conventions-testutils</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 </project>
