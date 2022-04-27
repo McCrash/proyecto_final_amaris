@@ -63,14 +63,14 @@
         </dependency>
 
         <dependency>
-            <groupId>org.greyhawk.core</groupId>
-            <artifactId>greyhawk-rest-test-utils</artifactId>
+            <groupId>org.greyhawk.rest.server</groupId>
+            <artifactId>greyhawk-rest-server-testutils</artifactId>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.greyhawk.core</groupId>
-            <artifactId>greyhawk-conventions-rest-api-test</artifactId>
+            <groupId>org.greyhawk.rest.server.conventions</groupId>
+            <artifactId>greyhawk-rest-server-conventions-testutils</artifactId>
             <scope>test</scope>
         </dependency>
 
