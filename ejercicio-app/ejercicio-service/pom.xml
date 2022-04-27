@@ -6,23 +6,11 @@
 
     <groupId>org.greyhawk.ejercicio</groupId>
     <artifactId>ejercicio-service</artifactId>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>15</source>
-                    <target>15</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <parent>
-        <groupId>org.greyhawk.core</groupId>
-        <artifactId>greyhawk-spring-parent</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <groupId>org.greyhawk.core.parents</groupId>
+        <artifactId>greyhawk-core-spring-parent</artifactId>
+        <version>1.5-SNAPSHOT</version>
         <relativePath></relativePath>
     </parent>
 
@@ -37,17 +25,29 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.greyhawk.rest</groupId>
+                <artifactId>greyhawk-rest-parent</artifactId>
+                <version>0.1.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
 
         <dependency>
-            <groupId>org.greyhawk.core</groupId>
+            <groupId>org.greyhawk.rest.server</groupId>
             <artifactId>greyhawk-rest-server-starter</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.greyhawk.ejercicio</groupId>
             <artifactId>ejercicio-apidoc</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>1.5-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
 
