@@ -1,9 +1,9 @@
 package org.greyhawk.ejercicio.inbounds.rest;
 
-import org.greyhawk.conventions.tests.restapi.inbounds.rest.tests.MockMvcTest;
-import org.greyhawk.ejercicio.domain.vos.Price;
+import org.greyhawk.ejercicio.domain_connectors.connectors.PriceDomainConnector;
 import org.greyhawk.ejercicio.domain_connectors.mappers.PriceDtoMapper;
-import org.greyhawk.ejercicio.domain_connectors.services.PricesService;
+import org.greyhawk.ejercicio.inbounds.rest.api.dtos.prices.response.PriceResponseDto;
+import org.greyhawk.rest.server.conventions.testutils.inbounds.rest.tests.MockMvcTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,8 +20,7 @@ import java.util.List;
 @ExtendWith(MockitoExtension.class)
 class PricesQueryControllerTest extends MockMvcTest {
 
-  private final PriceDtoMapper dtoMapper = Mappers.getMapper(PriceDtoMapper.class);
-  private @Mock PricesService service;
+  private @Mock PriceDomainConnector priceDomainConnector;
 
   @Override
   protected String getUriRoot() {
@@ -30,17 +29,18 @@ class PricesQueryControllerTest extends MockMvcTest {
 
   @Override
   public Object buildController() {
-    return new PricesQueryController(dtoMapper, service);
+    return new PricesQueryController(priceDomainConnector);
   }
 
-  Price price1 = new Price(35455L, 1L, 1, LocalDateTime.now(), LocalDateTime.now(), BigDecimal.valueOf(30.509));
-  Price price2 = new Price(35455L, 1L, 1, LocalDateTime.now(), LocalDateTime.now(), BigDecimal.valueOf(38.95));
+  PriceResponseDto price1 = new PriceResponseDto(35455L, 1L, 1, LocalDateTime.now(), LocalDateTime.now(), BigDecimal.valueOf(30.509));
+  PriceResponseDto price2 = new PriceResponseDto(35455L, 1L, 1, LocalDateTime.now(), LocalDateTime.now(), BigDecimal.valueOf(38.95));
 
   @Test
   @DisplayName("Find if exists and return NOT FOUND status")
   void should_not_find_unexisting() {
     // given
-    Mockito.when(service.findByApplyDateAndProductIdAndBrandId(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(List.of());
+    Mockito.when(priceDomainConnector.findByApplyDateAndProductIdAndBrandId(Mockito.any(), Mockito.any(), Mockito.any()))
+        .thenReturn(List.of());
     // when
     final var resp = performer().get("/find?productId=35455&brandId=1&applyDate=20201010-134456");
     // then
@@ -51,7 +51,7 @@ class PricesQueryControllerTest extends MockMvcTest {
   @DisplayName("Find if exists and return OK status")
   void should_find_existing() {
     // given
-    Mockito.when(service.findByApplyDateAndProductIdAndBrandId(Mockito.any(), Mockito.any(), Mockito.any()))
+    Mockito.when(priceDomainConnector.findByApplyDateAndProductIdAndBrandId(Mockito.any(), Mockito.any(), Mockito.any()))
         .thenReturn(List.of(price1, price2));
     // when
     final var resp = performer().get("/find?productId=35455&brandId=1&applyDate=20201010-134456");

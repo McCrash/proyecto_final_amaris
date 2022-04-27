@@ -1,4 +1,4 @@
-package org.greyhawk.ejercicio.domain_connectors.services;
+package org.greyhawk.ejercicio.domain.services;
 
 import org.greyhawk.ejercicio.domain.vos.Price;
 

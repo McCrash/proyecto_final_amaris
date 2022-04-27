@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.greyhawk.conventions.restapi.inbounds.rest.dtos.formats.LocalDateTimeDtoFormat;
+import org.greyhawk.rest.server.conventions.api.inbounds.rest.dtos.formats.LocalDateTimeDtoFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
