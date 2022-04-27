@@ -8,9 +8,9 @@
     <artifactId>ejercicio-apidoc</artifactId>
 
     <parent>
-        <groupId>org.greyhawk.core</groupId>
-        <artifactId>greyhawk-spring-parent</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <groupId>org.greyhawk.core.parents</groupId>
+        <artifactId>greyhawk-core-spring-parent</artifactId>
+        <version>1.5-SNAPSHOT</version>
         <relativePath></relativePath>
     </parent>
 
@@ -26,16 +26,29 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.greyhawk.rest</groupId>
+                <artifactId>greyhawk-rest-parent</artifactId>
+                <version>0.1.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
 
         <dependency>
-            <groupId>org.greyhawk.core</groupId>
+            <groupId>org.greyhawk.rest.server</groupId>
             <artifactId>greyhawk-rest-server-starter</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.greyhawk.core</groupId>
-            <artifactId>greyhawk-conventions-rest-api</artifactId>
+            <groupId>org.greyhawk.rest.server</groupId>
+            <artifactId>greyhawk-rest-server-testutils</artifactId>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
