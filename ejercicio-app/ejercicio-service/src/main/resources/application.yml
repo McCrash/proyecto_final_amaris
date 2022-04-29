@@ -16,6 +16,12 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       acks: all
       retries: 5
+    consumer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: ejercicio
+
 
 logging:
   level:

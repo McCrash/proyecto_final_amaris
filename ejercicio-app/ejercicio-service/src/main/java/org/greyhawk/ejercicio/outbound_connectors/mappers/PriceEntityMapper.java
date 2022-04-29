@@ -9,6 +9,8 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface PriceEntityMapper {
 
+  PriceEntity mapVo(Price price);
   Price mapEntity(PriceEntity priceEntity);
-  List<Price> mapEntityList(List<PriceEntity> priceEntity);
+  List<Price> mapEntityList(List<PriceEntity> priceEntities);
+  List<PriceEntity> mapVoList(List<Price> prices);
 }

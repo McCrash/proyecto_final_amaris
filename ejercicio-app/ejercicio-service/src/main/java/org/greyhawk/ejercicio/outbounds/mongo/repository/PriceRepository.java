@@ -13,4 +13,8 @@ public interface PriceRepository extends MongoRepository<PriceEntity, Long> {
 
   @Query("{'startDate': { '$lte' : ?0 }, 'endDate': { '$gt' : ?0 }, 'productId' : ?1, 'brandId' : ?2 }")
   List<PriceEntity> findByApplyDateAndProductIdAndBrandId(LocalDateTime aplicationDate, Long productId, Long brandId);
+
+  @Query("{'productId' : ?0, 'priceList' : ?1 }")
+  List<PriceEntity> findByProductIdAndPriceList(Long productId, Integer priceList);
+
 }
