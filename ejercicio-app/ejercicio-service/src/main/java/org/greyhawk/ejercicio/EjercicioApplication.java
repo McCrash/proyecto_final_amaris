@@ -9,8 +9,8 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories
 public class EjercicioApplication {
 
-    public static void main(final String[] args) {
-        SpringApplication.run(EjercicioApplication.class, args);
-    }
+  public static void main(final String[] args) {
+    SpringApplication.run(EjercicioApplication.class, args);
+  }
 
 }

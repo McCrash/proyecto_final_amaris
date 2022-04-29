@@ -6,6 +6,7 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ProductEntityMapper {
-    Product mapEntity(ProductEntity productEntity);
-    ProductEntity mapVo(Product product);
+  Product mapEntity(ProductEntity productEntity);
+  ProductEntity mapVo(Product product);
+
 }
