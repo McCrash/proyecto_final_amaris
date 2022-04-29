@@ -13,22 +13,22 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class ProductDomainConnectorComponent implements ProductDomainConnector {
 
-    private final ProductsService productsService;
+  private final ProductsService productsService;
 
-    @Override
-    public ProductResponseDto insert(final ProductRequestDto productRequestDto) {
-        Product insertedProduct = productsService.insert(Mappers.getMapper(ProductDtoMapper.class).mapRequest(productRequestDto));
-        return Mappers.getMapper(ProductDtoMapper.class).mapResponse(insertedProduct);
-    }
+  @Override
+  public ProductResponseDto insert(final ProductRequestDto productRequestDto) {
+    Product insertedProduct = productsService.insert(Mappers.getMapper(ProductDtoMapper.class).mapRequest(productRequestDto));
+    return Mappers.getMapper(ProductDtoMapper.class).mapResponse(insertedProduct);
+  }
 
-    @Override
-    public ProductResponseDto update(final ProductRequestDto productRequestDto) {
-        Product updatedProduct = productsService.update(Mappers.getMapper(ProductDtoMapper.class).mapRequest(productRequestDto));
-        return Mappers.getMapper(ProductDtoMapper.class).mapResponse(updatedProduct);
-    }
+  @Override
+  public ProductResponseDto update(final ProductRequestDto productRequestDto) {
+    Product updatedProduct = productsService.update(Mappers.getMapper(ProductDtoMapper.class).mapRequest(productRequestDto));
+    return Mappers.getMapper(ProductDtoMapper.class).mapResponse(updatedProduct);
+  }
 
-    @Override
-    public void delete(final String id) {
-        productsService.delete(id);
-    }
+  @Override
+  public void delete(final String id) {
+    productsService.delete(id);
+  }
 }

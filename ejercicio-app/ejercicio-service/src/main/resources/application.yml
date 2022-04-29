@@ -7,6 +7,15 @@ spring:
   sql:
     init:
       mode: always
+  kafka:
+    template:
+      default-topic: springtopic
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: all
+      retries: 5
 
 logging:
   level:
@@ -14,3 +23,4 @@ logging:
     org.greyhawk: debug
     org.springframework.data.mongodb.core.MongoTemplate: debug
     org.springframework.data.mongodb.repository.query: debug
+

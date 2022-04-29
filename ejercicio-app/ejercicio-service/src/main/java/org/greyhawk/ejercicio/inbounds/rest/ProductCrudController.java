@@ -18,21 +18,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ProductCrudController implements ProductCommandApi {
 
-    private final ProductDomainConnector productDomainConnector;
+  private final ProductDomainConnector productDomainConnector;
 
-    @Override
-    public ResponseEntity<SimpleResponseDto<ProductResponseDto>> insert(final ProductRequestDto dto) {
-        return SimpleResponseDto.success(ApiDocInsert.Response.Success.SC, productDomainConnector.insert(dto));
-    }
+  @Override
+  public ResponseEntity<SimpleResponseDto<ProductResponseDto>> insert(final ProductRequestDto dto) {
+    return SimpleResponseDto.success(ApiDocInsert.Response.Success.SC, productDomainConnector.insert(dto));
+  }
 
-    @Override
-    public ResponseEntity<SimpleResponseDto<ProductResponseDto>> update(final String id, final ProductRequestDto dto) {
-        return SimpleResponseDto.success(ApiDocUpdate.Response.Success.SC, productDomainConnector.update(dto));
-    }
+  @Override
+  public ResponseEntity<SimpleResponseDto<ProductResponseDto>> update(final String id, final ProductRequestDto dto) {
+    return SimpleResponseDto.success(ApiDocUpdate.Response.Success.SC, productDomainConnector.update(dto));
+  }
 
-    @Override
-    public ResponseEntity<SimpleResponseDto<Void>> delete(final String id) {
-        productDomainConnector.delete(id);
-        return SimpleResponseDto.success(ApiDocDelete.Response.Success.SC);
-    }
+  @Override
+  public ResponseEntity<SimpleResponseDto<Void>> delete(final String id) {
+    productDomainConnector.delete(id);
+    return SimpleResponseDto.success(ApiDocDelete.Response.Success.SC);
+  }
 }
