@@ -14,17 +14,18 @@ import org.springframework.stereotype.Component;
 public class ProductDomainConnectorComponent implements ProductDomainConnector {
 
   private final ProductsService productsService;
+  private final ProductDtoMapper mapper = Mappers.getMapper(ProductDtoMapper.class);
 
   @Override
   public ProductResponseDto insert(final ProductRequestDto productRequestDto) {
-    Product insertedProduct = productsService.insert(Mappers.getMapper(ProductDtoMapper.class).mapRequest(productRequestDto));
-    return Mappers.getMapper(ProductDtoMapper.class).mapResponse(insertedProduct);
+    Product insertedProduct = productsService.insert(mapper.mapRequest(productRequestDto));
+    return mapper.mapResponse(insertedProduct);
   }
 
   @Override
   public ProductResponseDto update(final ProductRequestDto productRequestDto) {
-    Product updatedProduct = productsService.update(Mappers.getMapper(ProductDtoMapper.class).mapRequest(productRequestDto));
-    return Mappers.getMapper(ProductDtoMapper.class).mapResponse(updatedProduct);
+    Product updatedProduct = productsService.update(mapper.mapRequest(productRequestDto));
+    return mapper.mapResponse(updatedProduct);
   }
 
   @Override
